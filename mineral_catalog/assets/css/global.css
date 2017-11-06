@@ -34,7 +34,7 @@ html { font-size: 62.5%; }
 
 body { background-color: #CAE5D2; font-size: 1.5em; line-height: 1.6; font-weight: 400; font-family: "Cousine"; color: #666; }
 
-.bounds { max-width: 800px; margin: 0 auto; padding: 50px 0 150px; overflow: hidden; }
+.bounds { max-width: 800px; margin: 0 auto 500px; padding: 50px 0 150px; overflow: hidden; }
 .bounds--small { max-width: 600px; padding: 50px 10px 150px; }
 
 .grid, .grid-5, .grid-10, .grid-15, .grid-20, .grid-25, .grid-30, .grid-33, .grid-35, .grid-40, .grid-45, .grid-50, .grid-55, .grid-60, .grid-65, .grid-66, .grid-70, .grid-75, .grid-80, .grid-90, .grid-95, .grid-100 { float: left; box-sizing: border-box; position: relative; }
@@ -179,8 +179,13 @@ table, p, ul { margin-bottom: 2.5rem; }
 
 .logo { display: block; fill: #384033; position: relative; margin: 0 auto; width: 72px; }
 .logo__name { margin-bottom: 0; }
-.logo__text { margin-bottom: 50px; font-size: 13px; }
+.logo__text { margin-bottom: 10px; font-size: 13px; }
 .logo--middle { fill: #406b44; }
+
+.browse__text { font-size: 25px; }
+
+.left__nav { position: absolute; left: 20px; top: 250px; width: 100px; }
+.right__nav { position: absolute; right: 120px; top: 250px; width: 100px; }
 
 .minerals__container { background-color: #fff; border-radius: 6px; list-style: none; padding: 30px 30px 20px 30px; -webkit-column-gap: 30px; -moz-column-gap: 30px; column-gap: 30px; }
 @media (min-width: 440px) and (max-width: 639px) { .minerals__container { -webkit-column-count: 2; -moz-column-count: 2; column-count: 2; } }
@@ -202,3 +207,4 @@ table, p, ul { margin-bottom: 2.5rem; }
 .mineral__table-container { padding: 5px 30px 0; }
 .mineral__category { font-weight: bold; width: 40%; }
 .mineral__formula { font-size: 12px; }
+
