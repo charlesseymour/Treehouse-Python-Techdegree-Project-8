@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
     'minerals'
 ]
 
@@ -123,3 +124,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
+
+DEBUG_TOOLBAR_CONFIG = {
+	'SHOW_TOOLBAR_CALLBACK': lambda x: True
+}
