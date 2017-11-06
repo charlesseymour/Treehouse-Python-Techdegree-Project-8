@@ -14,6 +14,15 @@
   <link rel="stylesheet" href="{% static 'css/global.css' %}">
 </head>
 <body>
+  <div class="left__nav">
+  <p class='text-centered'>Browse by mineral group</p>
+  <ul>
+      {% for group in groups %}
+        <li {% if group_name == group %} style="font-weight:bolder;" {% endif %}>
+            <a href="{% url 'minerals:group_list' group_name=group %}">{{ group }}</a></li>
+      {% endfor %}
+  </ul>
+  </div>
   <div class="bounds">
     <div class="grid-100">
         {% url 'minerals:list' as home_url %}
@@ -24,10 +33,28 @@
           <polygon points="127.6,61.4 127.6,61.4 110.3,13.5 110.3,13.5 70.3,48.1 70.3,48.1 88.3,80.5 95.3,81.4 95.3,81.4 "/>
         </svg>
         <h1 class="logo__name text-centered">Minnie's Minerals</h1>
-      </a>
+        {% if request.path != home_url %}</a>{% endif %}
       <p class="logo__text text-centered">Crystals and such</p>
+      <div class="text-centered">Browse by Mineral Name</div>
+      <div class="text-centered">
+      {% for character in alphabet %}
+        <span class="browse__text" {% if character == letter %} style="font-weight: bolder;"{% endif %}>
+            <a href="{% url 'minerals:list' letter=character %}">{{ character }}</a>
+        </span>
+      {% endfor %}
+      </div>
     </div>
+    
     {% block content %}{% endblock %} 
+  </div>
+  <div class="right__nav">
+    <p class="text-centered" style="padding-left:40px;">Search for minerals</p>
+    <form action="{% url 'minerals:search' %}" method="GET">
+		  <ul>
+			  <li><input type="search" name="q"></li>
+			  <li><input type="submit" value="Search"></li>
+		  </ul>
+	  </form>  
   </div>
   <div class="minerals__random">
       {% rand_pk as pk %}
