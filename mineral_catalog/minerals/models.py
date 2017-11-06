@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Mineral(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, db_index=True)
     image_filename = models.CharField(max_length=255)
     image_caption = models.CharField(max_length=255)
     category = models.CharField(max_length=255)
