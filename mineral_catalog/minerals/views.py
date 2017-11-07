@@ -11,7 +11,7 @@ groups = ['Silicates', 'Oxides', 'Sulfates', 'Carbonates', 'Halides',
               'Arsenates', 'Native Elements', 'Other']
 
 alphabet = [x for x in list(string.ascii_uppercase) if
-                Mineral.objects.filter(name__istartswith=x)]
+            x not in ['Q', 'Y']]
 
 def mineral_list(request, letter=None):
     if not letter:
