@@ -128,6 +128,7 @@ STATICFILES_DIRS = (
 
 INTERNAL_IPS = ['127.0.0.1']
 
-DEBUG_TOOLBAR_CONFIG = {
-	'SHOW_TOOLBAR_CALLBACK': lambda x: True
-}
+# Uncomment below if using Workspaces
+# DEBUG_TOOLBAR_CONFIG = {
+#	'SHOW_TOOLBAR_CALLBACK': lambda x: True
+# }
